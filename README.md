@@ -44,18 +44,53 @@ see `example.js` for more details
 ### for deals
 
 ```
-getDeals (params)
-dealUpdateMaxSafetyOrders (deal_id, max_safety_orders)
-dealPanicSell (deal_id)
-dealCancel (deal_id)
-dealUpdateTp (deal_id, new_take_profit_percentage)
-getDeal (deal_id)
+ getDeals (params)
+ 
+ dealUpdateMaxSafetyOrders (deal_id, max_safety_orders)
+ 
+ dealPanicSell (deal_id)
+ 
+ dealCancel (deal_id)
+ 
+ dealUpdateTp (deal_id, new_take_profit_percentage)
+ 
+ getDeal (deal_id)
+```
+
+### for bots
+
+```
+  getBotsBlackList ()
+  
+  botsUpdateBlackList (params)
+  
+  botCreate (params)
+  
+  getBots (params)
+  
+  getBotsStats (params)
+  
+  botsUpdate (params)
+  
+  botDisable (bot_id)
+  
+  botEnable (bot_id)
+  
+  botStartNewDeal (params)
+  
+  botDelete (bot_id)
+  
+  botPaniceSellAllDeals (bot_id)
+  
+  botCancelAllDeals (bot_id)
+  
+  botShow (bot_id)
 ```
 
 ## To do
 
 - [x] add deals endpoints
-- [ ] add bots endpoints
+- [x] add bots endpoints
 - [ ] add smart trades endpoints
 - [ ] add accounts endpoints
 
