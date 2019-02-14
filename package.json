@@ -1,0 +1,28 @@
+{
+  "name": "3commas-api-node",
+  "version": "0.1.0",
+  "description": "3commas API NodeJS wrapper",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "3commas",
+    "nodejs",
+    "wrapper",
+    "bots",
+    "trading"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rentorm/3commas-api-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rentorm/3commas-api-node/issues"
+  },
+  "author": "Rento",
+  "license": "gpl-3.0",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}
