@@ -26,7 +26,7 @@ yarn add https://github.com/rentorm/3commas-api-node/tarball/master
 
 ### Using in your project
 
-add module import to your script and provide API credentials
+add module to your script and provide API credentials
 
 ```js
 const threeCommasAPI = require('3commas-api-node')
@@ -51,4 +51,5 @@ see `example.js` for more details
 by me a beer 🍺
 
 BTC: 37N2MSShWExJGsKuAvBs9GEteUTrhZyvCi
+
 ETH: 0x9F5e35e7DCa77A6Ec7a307213C5F65bc6d010088
