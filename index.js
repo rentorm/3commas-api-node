@@ -129,6 +129,102 @@ class threeCommasAPI {
     return await this.makeRequest('GET', `/public/api/ver1/bots/${bot_id}/show?`, { bot_id })
   }
 
+  /**
+   * Smart Trades methods
+   */
+
+  async smartTradesCreateSimpleSell (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/create_simple_sell?`, params)
+  }
+
+  async smartTradesCreateSimpleBuy (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/create_simple_buy?`, params)
+  }
+
+  async smartTradesCreateSmartSell (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/create_smart_sell?`, params)
+  }
+
+  async smartTradesCreateSmartCover (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/create_smart_cover?`, params)
+  }
+
+  async smartTradesCreateSmartTrade (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/create_smart_trade?`, params)
+  }
+
+  async smartTrades () {
+    return await this.makeRequest('GET', `/public/api/ver1/smart_trades/create_smart_trade?`, null)
+  }
+
+  async smartTradesStepPanicSell (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/${params.smart_trade_id}/step_panic_sell?`, params)
+  }
+
+  async smartTradesUpdate (params) {
+    return await this.makeRequest('PATCH', `/public/api/ver1/smart_trades/${params.smart_trade_id}/update?`, params)
+  }
+
+  async smartTradesCancel (smart_trade_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/${smart_trade_id}/cancel?`, { smart_trade_id })
+  }
+
+  async smartTradesPanicSell (smart_trade_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/${smart_trade_id}/panic_sell?`, { smart_trade_id })
+  }
+
+  async smartTradesForceProcess (smart_trade_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/smart_trades/${smart_trade_id}/force_process?`, { smart_trade_id })
+  }
+
+  /**
+   * Accounts methods
+   */
+
+  async accountsNew (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/new?`, params)
+  }
+
+  async accounts () {
+    return await this.makeRequest('GET', `/public/api/ver1/accounts?`, null)
+  }
+
+  async accountsMarketList () {
+    return await this.makeRequest('GET', `/public/api/ver1/accounts/market_list?`, null)
+  }
+
+  async accountsCurrencyRates () {
+    return await this.makeRequest('GET', `/public/api/ver1/accounts/currency_rates?`, null)
+  }
+
+  async accountSellAllToUsd (account_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/sell_all_to_usd?`, { account_id })
+  }
+
+  async accountSellAllToBtc (account_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/sell_all_to_btc?`, { account_id })
+  }
+
+  async accountLoadBalances (account_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/load_balances?`, { account_id })
+  }
+
+  async accountRename (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${params.account_id}/rename?`, params)
+  }
+
+  async accountPieChartData (account_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/pie_chart_data?`, { account_id })
+  }
+
+  async accountTableData (account_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/show?`, { account_id })
+  }
+
+  async accountRemove (account_id) {
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/show?`, { account_id })
+  }
+
 }
 
 module.exports = threeCommasAPI

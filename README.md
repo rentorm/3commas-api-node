@@ -2,8 +2,6 @@
 
 NodeJS wrapper for [Official 3commas API](https://github.com/3commas-io/3commas-official-api-docs/) 
 
-⚠️ Currently work in progress ⚠️
-
 [3commas.io](https://3commas.io/?c=3cnode) is collection of smart tools for cryptocurrency traders and investors to minimize risks, limit losses, grow profits, and manage their trades and portfolios across multiple exchanges.
 
 ---
@@ -87,16 +85,61 @@ see `example.js` for more details
   botShow (bot_id)
 ```
 
-## To do
+### for smart trades
 
-- [x] add deals endpoints
-- [x] add bots endpoints
-- [ ] add smart trades endpoints
-- [ ] add accounts endpoints
+```
+  smartTradesCreateSimpleSell (params)
+
+  smartTradesCreateSimpleBuy (params)
+  
+  smartTradesCreateSmartSell (params)
+  
+  smartTradesCreateSmartCover (params)
+  
+  smartTradesCreateSmartTrade (params)
+  
+  smartTrades ()
+  
+  smartTradesStepPanicSell (params)
+  
+  smartTradesUpdate (params)
+  
+  smartTradesCancel (smart_trade_id)
+  
+  smartTradesPanicSell (smart_trade_id)
+  
+  smartTradesForceProcess (smart_trade_id)
+```
+
+### for accounts
+
+```
+  accountsNew (params)
+
+  accounts ()
+  
+  accountsMarketList ()
+  
+  accountsCurrencyRates ()
+  
+  accountSellAllToUsd (account_id)
+  
+  accountSellAllToBtc (account_id)
+  
+  accountLoadBalances (account_id)
+  
+  accountRename (params)
+  
+  accountPieChartData (account_id)
+  
+  accountTableData (account_id)
+  
+  accountRemove (account_id)
+```
 
 ---
 
-by me a beer 🍺
+buy me a beer 🍺
 
 BTC: 37N2MSShWExJGsKuAvBs9GEteUTrhZyvCi
 
