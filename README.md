@@ -13,13 +13,13 @@ NodeJS wrapper for [Official 3commas API](https://github.com/3commas-io/3commas-
 Add node module using npm or yarn
 
 ```bash
-npm install --save https://github.com/rentorm/3commas-api-node/tarball/master
+npm i 3commas-api-node
 ```
 
 or 
 
 ```bash
-yarn add https://github.com/rentorm/3commas-api-node/tarball/master
+yarn add 3commas-api-node
 ```
 
 ### Using in your project
