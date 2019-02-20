@@ -1,6 +1,6 @@
 {
   "name": "3commas-api-node",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "3commas API NodeJS wrapper",
   "main": "index.js",
   "engines": {
@@ -11,7 +11,12 @@
     "nodejs",
     "wrapper",
     "bots",
-    "trading"
+    "trading",
+    "javascript",
+    "api",
+    "cryptocurrency",
+    "bitcoin",
+    "altcoins"
   ],
   "repository": {
     "type": "git",
