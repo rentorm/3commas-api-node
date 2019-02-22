@@ -154,7 +154,7 @@ class threeCommasAPI {
   }
 
   async smartTrades () {
-    return await this.makeRequest('GET', `/public/api/ver1/smart_trades/create_smart_trade?`, null)
+    return await this.makeRequest('GET', `/public/api/ver1/smart_trades?`, null)
   }
 
   async smartTradesStepPanicSell (params) {
@@ -218,11 +218,11 @@ class threeCommasAPI {
   }
 
   async accountTableData (account_id) {
-    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/show?`, { account_id })
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/account_table_data?`, { account_id })
   }
 
   async accountRemove (account_id) {
-    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/show?`, { account_id })
+    return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/remove?`, { account_id })
   }
 
 }

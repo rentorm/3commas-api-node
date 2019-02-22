@@ -1,6 +1,6 @@
 {
   "name": "3commas-api-node",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "3commas API NodeJS wrapper",
   "main": "index.js",
   "engines": {
