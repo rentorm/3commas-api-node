@@ -154,7 +154,7 @@ class threeCommasAPI {
   }
 
   async smartTrades () {
-    return await this.makeRequest('GET', `/public/api/ver1/smart_trades?`, null)
+    return await this.makeRequest('GET', `/public/api/ver1/smart_trades?`, params)
   }
 
   async smartTradesStepPanicSell (params) {
