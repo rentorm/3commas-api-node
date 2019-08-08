@@ -3,7 +3,7 @@ const querystring = require('querystring');
 const crypto = require('crypto')
 const fetch = require('node-fetch')
 
-const API_URL = 'https://3commas.io'
+const API_URL = 'https://api.3commas.io'
 
 class threeCommasAPI {
   constructor(opts = {}) {
