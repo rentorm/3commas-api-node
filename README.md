@@ -32,7 +32,7 @@ const threeCommasAPI = require('3commas-api-node')
 const api = new threeCommasAPI({
   apiKey: '',
   apiSecret: '',
-  // url: 'https://api.3commas.io/public/api' // this is optional in case of defining other endpoint
+  // url: 'https://api.3commas.io' // this is optional in case of defining other endpoint
 })
 ```
 
