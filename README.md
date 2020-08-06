@@ -54,6 +54,9 @@ see `example.js` for more details
  dealUpdateTp (deal_id, new_take_profit_percentage)
  
  getDeal (deal_id)
+
+ getDealSafetyOrders (deal_id)
+
 ```
 
 ### for bots

@@ -73,6 +73,10 @@ class threeCommasAPI {
     return await this.makeRequest('GET', `/public/api/ver1/deals/${deal_id}/show?`, { deal_id })
   }
 
+  async getDealSafetyOrders (deal_id) {
+    return await this.makeRequest('GET', `/public/api/ver1/deals/${deal_id}/market_orders?`, { deal_id })
+  }
+
   /**
    * Bots methods
    */
