@@ -72,7 +72,7 @@ see `example.js` for more details
   
   getBotsStats (params)
   
-  botsUpdate (params)
+  botUpdate (params)
   
   botDisable (bot_id)
   
