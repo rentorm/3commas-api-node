@@ -77,6 +77,10 @@ class threeCommasAPI {
     return await this.makeRequest('GET', `/public/api/ver1/deals/${deal_id}/market_orders?`, { deal_id })
   }
 
+  async dealAddFunds (params) {
+    return await this.makeRequest('POST', `/public/api/ver1/deals/${params.deal_id}/add_funds?`, params)
+  }
+
   /**
    * Bots methods
    */
