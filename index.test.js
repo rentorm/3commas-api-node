@@ -268,5 +268,169 @@ describe('methods ', () => {
       expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
       expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
     })
+
+    test('botStartNewDeal must make a POST request to /bots/{id}/start_new_deal', async () => {
+      const expectedMethodType = 'POST'
+      const botParams = {
+        bot_id: 43
+      }
+      const botUrl = `${API_URL}/public/api/ver1/bots/${botParams.bot_id}/start_new_deal?`;
+      const expectedUrl = generateExpectedUrl(botUrl, botParams);
+
+      await api.botStartNewDeal(botParams);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('botDelete must make a POST request to /bots/{id}/delete', async () => {
+      const expectedMethodType = 'POST'
+      const bot_id = 43;
+      const botUrl = `${API_URL}/public/api/ver1/bots/${bot_id}/delete?`;
+      const expectedUrl = generateExpectedUrl(botUrl, {bot_id});
+
+      await api.botDelete(bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('botPaniceSellAllDeals must make a POST request to /bots/{id}/panic_sell_all_deals', async () => {
+      const expectedMethodType = 'POST'
+      const bot_id = 43;
+      const botUrl = `${API_URL}/public/api/ver1/bots/${bot_id}/panic_sell_all_deals?`;
+      const expectedUrl = generateExpectedUrl(botUrl, {bot_id});
+
+      await api.botPaniceSellAllDeals(bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('botCancelAllDeals must make a POST request to /bots/{id}/cancel_all_deals', async () => {
+      const expectedMethodType = 'POST'
+      const bot_id = 43;
+      const botUrl = `${API_URL}/public/api/ver1/bots/${bot_id}/cancel_all_deals?`;
+      const expectedUrl = generateExpectedUrl(botUrl, {bot_id});
+
+      await api.botCancelAllDeals(bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('botShow must make a GET request to /bots/{id}/show', async () => {
+      const expectedMethodType = 'GET'
+      const bot_id = 43;
+      const botUrl = `${API_URL}/public/api/ver1/bots/${bot_id}/show?`;
+      const expectedUrl = generateExpectedUrl(botUrl, {bot_id});
+
+      await api.botShow(bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+  });
+
+  describe('for smart trades ', () => {
+    test('smartTradesCreateSimpleSell must make a POST request to /create_simple_sell',
+    async () => {
+      const expectedMethodType = 'POST';
+      const botUrl = `${API_URL}/public/api/ver1/smart_trades/create_simple_sell?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.smartTradesCreateSimpleSell(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('smartTradesCreateSimpleBuy must make a POST request to /create_simple_buy',
+    async () => {
+      const expectedMethodType = 'POST';
+      const botUrl = `${API_URL}/public/api/ver1/smart_trades/create_simple_buy?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.smartTradesCreateSimpleBuy(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('smartTradesCreateSmartSell must make a POST request to /create_smart_sell',
+    async () => {
+      const expectedMethodType = 'POST';
+      const botUrl = `${API_URL}/public/api/ver1/smart_trades/create_smart_sell?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.smartTradesCreateSmartSell(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('smartTradesCreateSmartCover must make a POST request to /create_smart_cover',
+    async () => {
+      const expectedMethodType = 'POST';
+      const botUrl = `${API_URL}/public/api/ver1/smart_trades/create_smart_cover?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.smartTradesCreateSmartCover(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('smartTradesCreateSmartTrade must make a POST request to /create_smart_trade',
+    async () => {
+      const expectedMethodType = 'POST';
+      const botUrl = `${API_URL}/public/api/ver1/smart_trades/create_smart_trade?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.smartTradesCreateSmartTrade(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('smartTrades must make a GET request to /smart_trades',
+    async () => {
+      const expectedMethodType = 'GET';
+      const botUrl = `${API_URL}/public/api/ver1/smart_trades?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.smartTrades(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('smartTradesV2 must make a GET request to /smart_trades',
+    async () => {
+      const expectedMethodType = 'GET';
+      const botUrl = `${API_URL}/public/api/v2/smart_trades?`;
+      const expectedUrl = generateExpectedUrl(botUrl, testParam);
+
+      await api.smartTradesV2(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('smartTradesStepPanicSell must make a POST request to /step_panic_sell',
+    async () => {
+      const expectedMethodType = 'POST';
+      const params = {
+        smart_trade_id: 73
+      };
+      const botUrl = `${API_URL}/public/api/ver1/smart_trades/${params.smart_trade_id}/step_panic_sell?`;
+      const expectedUrl = generateExpectedUrl(botUrl, params);
+
+      await api.smartTradesStepPanicSell(params);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
   });
 });
