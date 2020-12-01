@@ -220,12 +220,50 @@ describe('methods ', () => {
       expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
     })
 
-    test('getBots must make a GET request to /bots', async () => {
+    test('getBotsStats must make a GET request to /bots/stats', async () => {
       const expectedMethodType = 'GET'
-      const botUrl = `${API_URL}/public/api/ver1/bots?`;
+      const botUrl = `${API_URL}/public/api/ver1/bots/stats?`;
       const expectedUrl = generateExpectedUrl(botUrl, testParam);
 
-      await api.getBots(testParam);
+      await api.getBotsStats(testParam);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('botUpdate must make a PATCH request to /bots/{id}/update', async () => {
+      const expectedMethodType = 'PATCH'
+      const botParams = {
+        bot_id: 43
+      }
+      const botUrl = `${API_URL}/public/api/ver1/bots/${botParams.bot_id}/update?`;
+      const expectedUrl = generateExpectedUrl(botUrl, botParams);
+
+      await api.botUpdate(botParams);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('botDisable must make a POST request to /bots/{id}/disable', async () => {
+      const expectedMethodType = 'POST'
+      const bot_id = 43;
+      const botUrl = `${API_URL}/public/api/ver1/bots/${bot_id}/disable?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { bot_id });
+
+      await api.botDisable(bot_id);
+
+      expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+      expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+    })
+
+    test('botEnable must make a POST request to /bots/{id}/disable', async () => {
+      const expectedMethodType = 'POST'
+      const bot_id = 43;
+      const botUrl = `${API_URL}/public/api/ver1/bots/${bot_id}/enable?`;
+      const expectedUrl = generateExpectedUrl(botUrl, { bot_id });
+
+      await api.botEnable(bot_id);
 
       expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
       expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
