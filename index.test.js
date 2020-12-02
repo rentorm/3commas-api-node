@@ -1,6 +1,6 @@
 const querystring = require('querystring');
 const { describe, expect, test, beforeEach, afterEach } = require("@jest/globals")
-const { fetchMock } = require('jest-fetch-mock');
+const fetchMock = require('jest-fetch-mock');
 
 require('jest-fetch-mock').enableMocks();
 const threeCommasAPI = require('./index');

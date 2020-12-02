@@ -7,7 +7,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "test": "jest"
   },
   "keywords": [
