@@ -185,10 +185,6 @@ class threeCommasAPI {
     return await this.makeRequest('POST', `/public/api/ver1/smart_trades/${smart_trade_id}/panic_sell?`, { smart_trade_id })
   }
 
-  async smartTradesV2CloseByMarket(smart_trade_id) {
-    return await this.makeRequest('POST', `/public/api/v2/smart_trades/${smart_trade_id}/close_by_market?`, { smart_trade_id })
-  }
-
   async smartTradesForceProcess(smart_trade_id) {
     return await this.makeRequest('POST', `/public/api/ver1/smart_trades/${smart_trade_id}/force_process?`, { smart_trade_id })
   }
