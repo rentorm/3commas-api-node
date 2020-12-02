@@ -1,6 +1,7 @@
-const { TestScheduler } = require('jest');
 const querystring = require('querystring');
-const crypto = require('crypto')
+const { describe, expect, test, beforeEach, afterEach } = require("@jest/globals")
+const { fetchMock } = require('jest-fetch-mock');
+
 require('jest-fetch-mock').enableMocks();
 const threeCommasAPI = require('./index');
 const { API_URL } = require('./config');
@@ -40,7 +41,7 @@ describe('constructor must ', () => {
 describe('makeRequest ', () => {
   test('should throw an error if apiKeys or apiSecret isn\'t provided', () => {
     try {
-      const c = new threeCommasAPI();
+      new threeCommasAPI();
     } catch (e) {
       expect(e).toEqual('missing api key or secret');
     }
@@ -57,7 +58,7 @@ describe('methods ', () => {
     arg1: 'val'
   };
 
-  let apil;
+  let api;
 
   beforeEach(() => {
     api = new threeCommasAPI(opts);
