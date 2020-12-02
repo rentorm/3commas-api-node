@@ -602,5 +602,44 @@ describe('methods ', () => {
         expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
         expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
       })
+
+    test('accountPieChartData must make a POST request to /accounts/{id}/pie_chart_data',
+      async () => {
+        const expectedMethodType = 'POST';
+        const account_id = 342;
+        const botUrl = `${API_URL}/public/api/ver1/accounts/${account_id}/pie_chart_data?`;
+        const expectedUrl = generateExpectedUrl(botUrl, { account_id });
+
+        await api.accountPieChartData(account_id);
+
+        expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+    test('accountTableData must make a POST request to /accounts/{id}/account_table_data',
+      async () => {
+        const expectedMethodType = 'POST';
+        const account_id = 342;
+        const botUrl = `${API_URL}/public/api/ver1/accounts/${account_id}/account_table_data?`;
+        const expectedUrl = generateExpectedUrl(botUrl, { account_id });
+
+        await api.accountTableData(account_id);
+
+        expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
+
+    test('accountRemove must make a POST request to /accounts/{id}/remove',
+      async () => {
+        const expectedMethodType = 'POST';
+        const account_id = 342;
+        const botUrl = `${API_URL}/public/api/ver1/accounts/${account_id}/remove?`;
+        const expectedUrl = generateExpectedUrl(botUrl, { account_id });
+
+        await api.accountRemove(account_id);
+
+        expect(fetchMock).toHaveBeenCalledWith(expectedUrl, _);
+        expect(fetchMock.mock.calls[0][1]).toMatchObject({ method: expectedMethodType })
+      })
   });
 });
