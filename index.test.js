@@ -7,13 +7,6 @@ const { API_URL } = require('./config');
 
 const _ = expect.anything();
 
-// Independently testing the generateSignature functionality to prevent refactor errors
-// This is known to work correctly
-const generateSignature = (apiSecret, requestUri, reqData) => {
-  const request = requestUri + reqData
-  return crypto.createHmac('sha256', apiSecret).update(request).digest('hex')
-}
-
 const generateExpectedUrl = (url, param) => {
   return `${url}${querystring.stringify(param)}`;
 }
