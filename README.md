@@ -33,6 +33,8 @@ const api = new threeCommasAPI({
   apiKey: '',
   apiSecret: '',
   // url: 'https://api.3commas.io' // this is optional in case of defining other endpoint
+  // forceMode: 'paper' // this is optional in case of defining account mode, 'real' or 'paper'
+
 })
 ```
 
