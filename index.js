@@ -9,6 +9,7 @@ class threeCommasAPI {
   constructor(opts = {}) {
     this._url = opts.url || API_URL
     this._apiKey = opts.apiKey || ''
+    this._apiSecret = opts.apiSecret || ''
     this._forcedMode = opts.forcedMode || ''
   }
 
