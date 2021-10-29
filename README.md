@@ -105,6 +105,8 @@ see `example.js` for more details
   smartTradesCreateSmartTrade (params)
   
   smartTrades ()
+
+  smartTradesV2 ()
   
   smartTradesStepPanicSell (params)
   

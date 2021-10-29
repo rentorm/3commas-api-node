@@ -1,12 +1,12 @@
 'use strict'
 const querystring = require('querystring');
-const crypto = require('crypto')
-const fetch = require('node-fetch')
+const crypto = require('crypto');
+const fetch = require('node-fetch');
+const { API_URL } = require('./config');
 
-const API_URL = 'https://api.3commas.io'
 
 class threeCommasAPI {
-  constructor(opts = {}) {
+  constructor (opts = {}) {
     this._url = opts.url || API_URL
     this._apiKey = opts.apiKey || ''
     this._apiSecret = opts.apiSecret || ''
@@ -42,7 +42,7 @@ class threeCommasAPI {
 
       return await response.json()
     } catch (e) {
-      console.log(e);
+      console.error(e);
       return false
     }
   }
@@ -170,7 +170,7 @@ class threeCommasAPI {
   async smartTradesV2 (params) {
     return await this.makeRequest('GET', `/public/api/v2/smart_trades?`, params)
   }
-  
+
   async smartTradesStepPanicSell (params) {
     return await this.makeRequest('POST', `/public/api/ver1/smart_trades/${params.smart_trade_id}/step_panic_sell?`, params)
   }
