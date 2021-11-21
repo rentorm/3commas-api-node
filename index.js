@@ -1,5 +1,5 @@
 'use strict'
-const querystring = require('querystring');
+const querystring = require('querystring')
 const crypto = require('crypto')
 const fetch = require('node-fetch')
 
@@ -237,6 +237,10 @@ class threeCommasAPI {
 
   async accountRemove (account_id) {
     return await this.makeRequest('POST', `/public/api/ver1/accounts/${account_id}/remove?`, { account_id })
+  }
+
+  async accountShow (account_id) {
+    return await this.makeRequest('GET', `/public/api/ver1/accounts/${account_id}?`, { account_id })
   }
 
 }
