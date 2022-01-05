@@ -403,6 +403,17 @@ class threeCommasAPI {
     );
   }
 
+  /**
+   * creating smarttrade version 2
+   * https://github.com/3commas-io/3commas-official-api-docs/blob/master/smart_trades_v2_api.md#create-smart-trade-v2-permission-smart_trade_write-security-signed
+   */
+  async createSmartTradesV2(params) {
+    return await this.makeRequest(
+      "POST",
+      `/public/api/v2/smart_trades?`,
+      params
+    );
+  }
 }
 
 module.exports = threeCommasAPI;
