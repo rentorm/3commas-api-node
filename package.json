@@ -28,6 +28,6 @@
   "author": "Rento",
   "license": "gpl-3.0",
   "dependencies": {
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^3.1.1"
   }
 }
