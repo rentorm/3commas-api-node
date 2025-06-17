@@ -1,3 +1,7 @@
+**⚠️ Archived:** This repository is no longer maintained and is archived. No further updates or support will be provided.
+
+---
+
 # 3commas API NodeJs wrapper
 
 NodeJS wrapper for [Official 3commas API](https://github.com/3commas-io/3commas-official-api-docs/) 
